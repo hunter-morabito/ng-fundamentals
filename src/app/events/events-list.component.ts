@@ -4,8 +4,7 @@ import { ToastrService } from '../common/toastr.service';
 
 /* Lets ts know toastr is in scope through angular.json */
 @Component({
-    selector: 'events-list',
-    template: `
+  template: `
     <div>
         <h1>Upcoming Angular Events</h1>
         <hr/>
@@ -17,11 +16,11 @@ import { ToastrService } from '../common/toastr.service';
     </div>
     `
 })
-export class EventsListComponent implements OnInit{
+export class EventsListComponent implements OnInit {
   events: any[];
   /* short hand for declaring and setting a variable */
   constructor(private eventService: EventService,
-              private toastr: ToastrService){
+    private toastr: ToastrService) {
   }
 
   /* Lifecycle hook */
@@ -29,7 +28,7 @@ export class EventsListComponent implements OnInit{
     this.events = this.eventService.getEvents();
   }
 
-  handleThumbnailClick(eventName){
+  handleThumbnailClick(eventName) {
     this.toastr.success(eventName);
   }
 }

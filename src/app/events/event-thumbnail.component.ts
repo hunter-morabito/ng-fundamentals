@@ -1,8 +1,8 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core'
+import { Component, Input, Output, EventEmitter } from '@angular/core'
 
 @Component({
-    selector: 'event-thumbnail',
-    template: `
+  selector: 'event-thumbnail',
+  template: `
         <div class="well hoverwell thumbnail">
             <h2>{{event?.name}}</h2>
             <div>Date: {{event?.date}}</div>
@@ -22,7 +22,7 @@ import {Component, Input, Output, EventEmitter} from '@angular/core'
             </div>
         </div>
     `,
-    styles:[`
+  styles: [`
     .green {color: #003300 !important;}
     .bold {font-weight:bold;}
     .thumbnail {min-height: 210px;}
@@ -30,12 +30,13 @@ import {Component, Input, Output, EventEmitter} from '@angular/core'
     .well div {color: #bbb;}
 `]
 })
-export class EventThumbnailComponent{
-    @Input() event:any
+export class EventThumbnailComponent {
+  @Input() event: any
 
-    getStartTimeClass(){
-        if(this.event && this.event.time === '8:00 am')
-            return ['green', 'bold']
-        return []
+  getStartTimeClass() {
+    if (this.event && this.event.time === '8:00 am') {
+      return ['green', 'bold'];
     }
+    return [];
+  }
 }

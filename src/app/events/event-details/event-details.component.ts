@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { EventService } from '../shared/event.service';
 
 @Component({
@@ -8,13 +8,13 @@ import { EventService } from '../shared/event.service';
     .event-image: {height:100px;}
   `]
 })
-export class EventDetailsComponent{
-  event:any;
-  constructor(private eventService:EventService){
+export class EventDetailsComponent implements OnInit {
+  event: any;
+  constructor(private eventService: EventService) {
 
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.event = this.eventService.getEvent(1);
   }
 }
