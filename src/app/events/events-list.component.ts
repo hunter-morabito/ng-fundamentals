@@ -3,6 +3,7 @@ import { EventService } from './shared/event.service';
 import { ToastrService } from '../common/toastr.service';
 
 /* Lets ts know toastr is in scope through angular.json */
+// regaining control
 @Component({
   template: `
     <div>
