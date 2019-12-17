@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { EventService } from './shared/event.service';
 import { ToastrService } from '../common/toastr.service';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { IEvent } from './shared/index';
 
 /* Lets ts know toastr is in scope through angular.json */
 // regaining control
@@ -19,7 +21,7 @@ import { ActivatedRoute } from '@angular/router';
     `
 })
 export class EventsListComponent implements OnInit {
-  events: any;
+  events: IEvent[];
   /* short hand for declaring and setting a variable */
   constructor(private eventService: EventService,
     private toastr: ToastrService,
